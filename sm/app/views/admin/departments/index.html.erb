@@ -1,0 +1,17 @@
+<h2><%= @page_title%></h2>
+<%= link_to  "Add New", new_admin_department_path, class:'btn btn-success pull-right' %>
+<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Full Name</th>
+		<th>Action</th>
+	</tr>
+	<% @departments.each do |department|%>
+	<tr>
+		<td><%= department.name %></td>
+		<td><%= department.full_name %></td>
+		<td> <%= link_to 'Edit', edit_admin_department_path(department), class:'btn btn-primary' %> <%= link_to 'Delete', admin_department_path(department), method: :delete, data: {confirm: 'Are you sure?'}, class:'btn btn-danger' %> </td>
+	</tr>
+	<% end %>
+</table>
+

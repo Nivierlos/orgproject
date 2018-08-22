@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	
+	<tr>
+		<th>Registration Number</th>
+		<% @results.each do |result|%>
+	    <th><%= result.course.module_code %></th>
+	    <% end %>
+	</tr>
+	<% @results.each do |result|%>
+	<tr>
+		<td><%= result.student.reg_number%></td>
+		<% @results.each_slice(3) do |result|%>
+		  <% @results.each do |result|%>
+		    <td><%= result.marks%></td>
+		  <% end %>
+		<% end %>
+	</tr>
+	<% end %>	
+
+</table>

@@ -1,0 +1,39 @@
+<!-- Default form register -->
+<%= form_tag registers_path do  %>
+
+    <% if @student.errors.any? %>
+        <% @student.errors.full_messages.each do |msg| %>
+           <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+        
+    <% end %>
+    <form class="text-center border border-light p-5">
+
+        
+            <!-- First name -->
+        <%= text_field_tag :first_name, params[:first_name], class:'form-control mb-4', placeholder:'First name' %>
+    
+        <%= select_tag :department_id, Department.all.collect { |x| [x.name, x.id]}, class:'form-control mb-4'%>
+    
+        <!-- Last name -->
+        <%= text_field_tag :last_name, params[:last_name], class:'form-control mb-4', placeholder:'Last name'%>
+    
+
+        <!-- E-mail -->
+        <%= email_field_tag :email, params[:email], class:'form-control mb-4', placeholder:'E-mail' %>
+
+        <!-- Password -->
+        <%= password_field_tag :password,params[:password], class:'form-control mb-4', placeholder:'Password' %>
+        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+        </small>
+
+        <!-- Phone number -->
+        <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Confirm password" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+
+        <!-- Sign up button -->
+        <%= submit_tag 'Register', class:'btn btn-info my-4 btn-block' %>
+        <%= link_to  "Cancel", login_path, class:'btn btn-default' %>
+    </form>
+<% end %>
+   

@@ -1,0 +1,36 @@
+<div id="students-show">
+	<h2><%= @student.first_name%> <%= @student.last_name%></h2>
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag ('user.jpg') %>
+	
+		</div>
+		<div class="col-md-8">
+				<div class="students-show-right">
+					<ul>
+						<li><strong>First Name: </strong><%= @student.first_name %></li>
+						<li><strong>Last Name: </strong><%= @student.last_name %></li>
+						<li><strong>Reg Number: </strong><%= @student.reg_number %></li>
+						<li><strong>Department: </strong><%= @student.department.name %></li>
+						<li><strong>Level:</strong><%= @student.level %></li>
+						<li><strong>Email: </strong><%= @student.email %></li>
+						<li><strong>Telephone: </strong><%= @student.phone %></li>
+						<li><strong>ID/Passport: </strong><%= @student.nid_passport %></li>
+						<li><strong>Sex: </strong><%= @student.sex %></li>
+						
+						<li><strong>Birth date: </strong><%= @student.dob%></li>
+						<li><strong>Father's Name:</strong><%= @student.father_name%></li>
+						<li><strong>Mother's Name:</strong> <%= @student.mother_name%></li>
+					</ul>
+				</div>
+		</div>
+		<%= link_to 'Edit', edit_student_path(@student.id),class:'btn btn-primary'%>
+	</div>
+
+
+	 
+</div>
+<!--
+
+
+-->

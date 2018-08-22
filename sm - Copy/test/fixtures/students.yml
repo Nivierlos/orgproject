@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reg_number: 1
+  first_name: MyString
+  last_name: MyString
+  dob: 2018-08-16
+  email: MyString
+  phone: MyString
+  sex: MyString
+  address: MyString
+  profile_picture: MyString
+  ubudehe: 1
+  nid_passport: MyString
+  father_name: MyString
+  mother_name: MyString
+  guadian_name: MyString
+  nationality: MyString
+  department_id: 1
+  level: 1
+  sponsor: MyString
+  password: MyString
+
+two:
+  reg_number: 1
+  first_name: MyString
+  last_name: MyString
+  dob: 2018-08-16
+  email: MyString
+  phone: MyString
+  sex: MyString
+  address: MyString
+  profile_picture: MyString
+  ubudehe: 1
+  nid_passport: MyString
+  father_name: MyString
+  mother_name: MyString
+  guadian_name: MyString
+  nationality: MyString
+  department_id: 1
+  level: 1
+  sponsor: MyString
+  password: MyString

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title ? @page_title : 'Welcome'%> | SMMIS</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-default">
+      <a class="navbar-brand disabled" href="#"></a>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= params[:controller] == 'students' ? 'active' : '' %>">
+            <%= link_to 'Home', root_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item <%= params[:controller] == 'results' ? 'active' : '' %>">
+           <%= link_to 'Results', results_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item <%= params[:controller] == 'courses'? 'active' : '' %>">
+            <%= link_to 'Modules', courses_path, class:'nav-link' %>
+           </li>
+          <li class="nav-item <%= params[:controller] == 'admin'? 'active' : '' %>">
+            <%= link_to 'Admin', admin_users_path, class:'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+    	<% if flash[:notice] %>
+    	<div class="alert alert-info"><%= flash[:notice] %></div>
+    	<% end %>
+    	 <%= yield %>
+    </div>
+  </body>
+</html>

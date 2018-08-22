@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  course_id: 1
+  department_id: 1
+  level: 1
+  marks: 1.5
+  ac_year: 1
+
+two:
+  student_id: 1
+  course_id: 1
+  department_id: 1
+  level: 1
+  marks: 1.5
+  ac_year: 1

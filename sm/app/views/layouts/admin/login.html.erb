@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %> | SoICT</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin/login.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+       
+       <div class="row">
+        <div class="col-md-6">
+          <!-- UR Logo -->
+          </br>
+          </br>
+          </br>
+          <%= image_tag  "ur.PNG" %>
+          </br>
+          </br>
+          <p class="h4 mb-4"><%= @page_title %></p>
+        </div>
+        <div class="col-md-6">
+            <% if flash[:notice] %>
+            <div class="alert alert-info"><%= flash[:notice] %></div>
+            <% end %>
+
+            <%= yield %>
+         </div>
+    </div>
+
+  </body>
+</html>

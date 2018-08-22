@@ -1,0 +1,50 @@
+<!-- Default form register -->
+<form class="text-center border border-light p-5">
+    
+    <div class="row">
+        <div class="col-md-6">
+          <!-- UR Logo -->
+          </br>
+          </br>
+          </br>
+          <%= image_tag  "ur.PNG" %>
+          </br>
+          </br>
+          <p class="h4 mb-4">SoICT Registration</p>
+        </div>
+        <div class="col-md-6">
+        <%= form_for  @student do |f| %>
+    <% if @student.errors.any? %>
+        <% @student.errors.full_messages.each do |msg| %>
+           <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+        
+    <% end %>
+            
+                     <!-- First name -->
+                    <%= f.text_field :first_name, class:'form-control mb-4', placeholder:'First name' %>
+             
+
+                
+                    <!-- Last name -->
+                    <%= f.text_field :last_name, class:'form-control mb-4', placeholder:'Last name'%>
+             
+
+            <!-- E-mail -->
+            <%= f.email_field :email, class:'form-control mb-4', placeholder:'E-mail '%>
+
+            <!-- Password -->
+            <%= f.password_field :password, class:'form-control mb-4', placeholder:'Password' %>
+            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            </small>
+
+            <!-- Phone number -->
+            <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Confirm password" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+            <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+
+            <!-- Sign up button -->
+            <%= f.submit 'Register', class:'btn btn-info my-4 btn-block' %>
+            <%= link_to  "Cancel", login_path, class:'btn btn-default' %>
+            <% end %>
+        </div>
+    </div>

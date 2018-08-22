@@ -1,0 +1,48 @@
+
+body{
+	font-family: 'Arial', sans-serif;
+	background: #ddd;
+	line-height: 1.6em;
+}
+.navbar{
+	background: #008cd9;
+	font-size: 19px;
+	color: #000;
+	padding: 0%;
+}
+.navbar a{
+	color: #000 !important;
+	background: #008cd9;
+}
+.navbar  a:hover{
+	color: #000;
+	text-decoration: bold;
+	background: #ddd !important;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navabr-nav > .active{
+	background: #39b7fc;
+	text-decoration: none;
+	color: #000;
+}
+.navbar-default .navbar-nav > .active:hover > a:hover, .navbar-default .navabr-nav > .active:hover{
+	background: #39b7fc;
+	text-decoration: none;
+	color: #000;
+}
+
+.btn .btn-primary{
+	background: #008cd9;
+	color: #000;
+}
+.btn .btn-primary:hover{
+	background: #39b7fc;
+	color: #000;
+}
+table{
+	background: #fff;
+	color: #000;
+}
+form .form-group{
+	background: #fff;
+	color: #000;
+}

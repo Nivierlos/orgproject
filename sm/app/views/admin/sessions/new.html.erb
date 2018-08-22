@@ -1,0 +1,13 @@
+ <%= form_tag admin_sessions_path, class:'text-center border border-light p-5' do %>
+    <%= image_tag  "user.jpg", class:'mb-4', width:'72', height:'72' %>
+    <% if flash[:notice] %>
+             <div class="alert alert-success"><%= flash[:notice] %></div>
+          <% end %>
+          <% if flash[:alert] %>
+             <div class="alert alert-danger"><%= flash[:alert] %></div>
+          <% end %>
+     <h2 class="form-signin-heading">SoICT</h2>
+     <%= text_field_tag :email, params[:email], class:'form-control mb-4', placeholder:'E-mail' %>
+     <%= password_field_tag :password, '', class:'form-control mb-4', placeholder:'password' %>
+     <%= submit_tag "Login", class:'btn btn-primary btn-block'%>
+ <% end %>

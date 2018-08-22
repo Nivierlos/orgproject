@@ -1,0 +1,19 @@
+<h2><%= @page_title%></h2>
+<%= link_to  "Add new", new_admin_result_path, class:'btn btn-success pull-right' %>
+
+<table class="table table-striped">
+  <tr> 
+    <th>Department</th>
+    <th>Level</th>
+    <th>Academic</th>
+    <th>Action</th>
+  </tr>
+  <% @results.each do |result|%>
+  <tr>
+    <td><%= result.department.name %></td>
+    <td><%= result.level %></td>
+    <td><%= result.ac_year %></td>
+    <td><%= link_to  "View result", admin_result_path(result), class:'btn btn-primary' %></td>
+  </tr>
+  <% end %>
+  </table>

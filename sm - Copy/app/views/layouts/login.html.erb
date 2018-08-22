@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %> | SoICT</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'login.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+        <% if flash[:notice] %>
+    	<div class="alert alert-info"><%= flash[:notice] %></div>
+    	<% end %>
+
+        <%= yield %>
+    </div>
+
+  </body>
+</html>

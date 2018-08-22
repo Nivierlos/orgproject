@@ -1,0 +1,38 @@
+<h2><%= @page_title%></h2>
+<%= form_for [:admin, @result] do |f| %>
+
+<% if @result.errors.any? %>
+  <% @result.errors.full_messages.each do |msg| %>
+   <!-- show errors -->
+     <div class="alert alert-danger"><%= msg %></div>
+     <% end %>
+  <% end %>
+	
+	<div class="form-group">
+		<%= f.label :registration_year %><br/>
+		<%=f.select :ac_year, Student.all.collect {|x| [x.ac_year, x.id]}, placeholder:'2017-2018', class:'form-control'%>
+	</div>
+	<div class="form-group">
+		<%= f.label :department%><br/>
+		<%= f.select :department_id, Department.all.collect {|x|[x.name, x.id]}, {:include_blank => 'select one'}, class:'form-control'%>
+	</div>
+	<div class="form-group">
+		<%= f.label :module%><br/>
+		<%= f.select :course_id, Course.all.collect {|x|[x.module_name, x.id]}, {:include_blank => 'select one'}, class:'form-control'%>
+	</div>		
+	<div class="form-group">
+		<%= f.label :level%><br/>
+		<%= f.select :level, options_for_select([[1],[2],[3],[4]]), {:include_blank => 'select one'},class:'form-control'%>
+
+   <% @results.each do |result|%>      
+      <div class="form-group">
+	  <%= @reg_no = result.student.reg_number%>
+		<%= f.number_field  :marks %>
+	</div>
+		<% f.select :student_id, Student.all.collect {|reg_no|[reg_no.reg_number, reg_no.id]}, {:include_blank => 'pick registration number'}, class:'form-control'%>
+   <% end %>
+   <%= f.submit 'Submit',class:'btn btn-primary' %>
+	<%= link_to 'Cancel', admin_results_path, class:'btn btn-default'%>
+
+<% end %>
+
